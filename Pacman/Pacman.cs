@@ -48,6 +48,10 @@ namespace Pacman
             {
                 Globals.Game_array[pos_y, pos_x] = Objects.Space;
                 Globals.Game_array[y, x] = character;
+                Console.SetCursorPosition(Globals.Win_base_x + x, Globals.Win_base_y + y);
+                Console.WriteLine(character);
+                Console.SetCursorPosition(Globals.Win_base_x + pos_x, Globals.Win_base_y + pos_y);
+                Console.WriteLine(Objects.Space);
                 pos_x = x;
                 pos_y = y;
             }

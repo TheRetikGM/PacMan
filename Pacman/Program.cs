@@ -33,12 +33,12 @@ namespace Pacman
         }
         static void refresh_game()
         {
+            Console.SetCursorPosition(Globals.Win_base_x, Globals.Win_base_y);
             for (int i = 0; i < Globals.WIN_Y; i++)
             {
+                Console.SetCursorPosition(Globals.Win_base_x, Globals.Win_base_y + i);
                 for (int j = 0; j < Globals.WIN_X; j++)
                 {
-                    Console.SetCursorPosition(Globals.Win_base_x + j, Globals.Win_base_y + i);
-
                     if (i == Globals.Pac.pos_y && j == Globals.Pac.pos_x)
                         Console.ForegroundColor = Globals.Pac.color;
                     else
@@ -46,10 +46,11 @@ namespace Pacman
 
                     Console.Write(Globals.Game_array[i, j]);
                 }
+                Console.SetCursorPosition(Globals.Win_base_x, Globals.Win_base_y + i);
             }
         }
         static void gen_box()
-        {
+        {        
             for (int i = 0; i < Globals.WIN_Y; i++)
             {
                 for (int j = 0; j < Globals.WIN_X; j++)
@@ -112,9 +113,9 @@ namespace Pacman
         {
             Random rnd = new Random(Guid.NewGuid().GetHashCode());
             gen_box();
-            //gen_rand_walls('v', rnd.Next(8, 10));
-            //gen_rand_walls('h', rnd.Next(8, 10));
-            //link_walls();
+            gen_rand_walls('v', rnd.Next(8, 10));
+            gen_rand_walls('h', rnd.Next(8, 10));
+            link_walls();
 
         }
         static void flush_input()
@@ -147,8 +148,7 @@ namespace Pacman
                         Globals.Pac.move_right();
                         break;
                 }
-                refresh_game();
-                //h_input();
+                flush_input();
             }     
         }
     }
