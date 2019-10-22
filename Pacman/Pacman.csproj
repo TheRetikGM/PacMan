@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generation.cs" />
     <Compile Include="Globals.cs" />
+    <Compile Include="Input.cs" />
     <Compile Include="Objects.cs" />
     <Compile Include="Pacman.cs" />
     <Compile Include="Program.cs" />
