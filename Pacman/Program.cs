@@ -13,7 +13,8 @@ namespace Pacman
             Generation.init_game();
             Generation.gen_game_level();
             Generation.refresh_game();
-            Input.InputHandler();
+            Console.SetCursorPosition(0, 0);
+           // Input.InputHandler();
         }
     }
 }

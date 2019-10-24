@@ -9,6 +9,6 @@ namespace Pacman
     public static class Objects
     {
         public static char Hline, Vline, ULcorner, URcorner, DLcorner, DRcorner, Space, HUline, HDline, VLline, VRline, Plus;
-        public static ConsoleColor Color = ConsoleColor.White;
+        public static ConsoleColor ObjectsColor = ConsoleColor.White;
     }
 }

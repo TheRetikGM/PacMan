@@ -55,8 +55,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Walls\" />
+    <Content Include="Walls\wall1.txt" />
+    <Content Include="Walls\wall10.txt" />
+    <Content Include="Walls\wall11.txt" />
+    <Content Include="Walls\wall12.txt" />
+    <Content Include="Walls\wall2.txt" />
+    <Content Include="Walls\wall3.txt" />
+    <Content Include="Walls\wall4.txt" />
+    <Content Include="Walls\wall5.txt" />
+    <Content Include="Walls\wall6.txt" />
+    <Content Include="Walls\wall7.txt" />
+    <Content Include="Walls\wall8.txt" />
+    <Content Include="Walls\wall9.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

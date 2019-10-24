@@ -9,7 +9,7 @@ namespace Pacman
     public class Pacman
     {
         /* Variables */
-        private char character;
+        public char Character;
         public ConsoleColor color;
         public int pos_x, pos_y;
 
@@ -26,19 +26,19 @@ namespace Pacman
                 this.pos_y = 1;
                 this.pos_x = 1;
             }
-            character = pacman_character;
+            Character = pacman_character;
             this.color = color;
 
-            Globals.Game_array[this.pos_y, this.pos_x] = character;
+            Globals.Game_array[this.pos_y, this.pos_x] = Character;
         }
         public Pacman()
         {
             pos_y = 1;
             pos_x = 1;
-            character = 'C';
+            Character = 'C';
             color = ConsoleColor.Yellow;
 
-            Globals.Game_array[pos_y, pos_x] = character;
+            Globals.Game_array[pos_y, pos_x] = Character;
         }
 
         /* Methods */
@@ -47,9 +47,10 @@ namespace Pacman
             if (Globals.Game_array[y, x] == Objects.Space)
             {
                 Globals.Game_array[pos_y, pos_x] = Objects.Space;
-                Globals.Game_array[y, x] = character;
+                Globals.Game_array[y, x] = Character;
                 Console.SetCursorPosition(Globals.Win_base_x + x, Globals.Win_base_y + y);
-                Console.WriteLine(character);
+                Console.ForegroundColor = color;
+                Console.WriteLine(Character);
                 Console.SetCursorPosition(Globals.Win_base_x + pos_x, Globals.Win_base_y + pos_y);
                 Console.ForegroundColor = color;
                 Console.WriteLine(Objects.Space);

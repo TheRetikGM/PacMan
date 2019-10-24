@@ -28,7 +28,7 @@ namespace Pacman
             Objects.HDline = '╦';
             Objects.VLline = '╣';
             Objects.VRline = '╠';
-            Objects.Color = ConsoleColor.Cyan;
+            Objects.ObjectsColor = ConsoleColor.Cyan;
             Globals.Pac = new Pacman(3, 5, 'C', ConsoleColor.Yellow);
 
             Console.CursorVisible = false;
@@ -44,7 +44,7 @@ namespace Pacman
                     if (i == Globals.Pac.pos_y && j == Globals.Pac.pos_x)
                         Console.ForegroundColor = Globals.Pac.color;
                     else
-                        Console.ForegroundColor = Objects.Color;
+                        Console.ForegroundColor = Objects.ObjectsColor;
 
                     Console.Write(Globals.Game_array[i, j]);
                 }
@@ -69,6 +69,8 @@ namespace Pacman
                         Globals.Game_array[i, j] = Objects.DRcorner;
                     else if (i == Globals.WIN_Y - 1 && j == Globals.WIN_X - 1)
                         Globals.Game_array[i, j] = Objects.DLcorner;
+                    else if (Globals.Game_array[i, j] == Globals.Pac.Character)
+                        continue;
                     else
                         Globals.Game_array[i, j] = Objects.Space;
                 }
