@@ -28,6 +28,7 @@ namespace Pacman
             Objects.HDline = '╦';
             Objects.VLline = '╣';
             Objects.VRline = '╠';
+            Objects.TicTac = '•';
             Objects.ObjectsColor = ConsoleColor.Cyan;
             Globals.Pac = new Pacman(3, 5, 'C', ConsoleColor.Yellow);
 
@@ -80,6 +81,19 @@ namespace Pacman
         {
             Random rnd = new Random(Guid.NewGuid().GetHashCode());
             gen_box();
+        }
+        public static void GenTicTacs()
+        {
+            for (int i = 0; i < Globals.WIN_Y; i++)
+            {
+                for (int j = 0; j < Globals.WIN_X; j++)
+                {
+                    if (Globals.Game_array[i, j] == Objects.Space)
+                    {
+                        Globals.Game_array[i, j] = Objects.TicTac;
+                    }
+                }
+            }
         }
     }
 }

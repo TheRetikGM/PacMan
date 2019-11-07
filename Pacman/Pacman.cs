@@ -13,6 +13,7 @@ namespace Pacman
         public ConsoleColor color;
         public int pos_x, pos_y;
         public Directions last_move_dir = Directions.None;
+        public int Score = 0;
 
         /* Constructor */
         public Pacman(int pos_y, int pos_x, char pacman_character, ConsoleColor color)

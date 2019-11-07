@@ -14,6 +14,7 @@ namespace Pacman
 
             Generation.init_game();
             Generation.gen_game_level();
+            Generation.GenTicTacs();
             Generation.refresh_game();
             Input.InputHandler();
         }
