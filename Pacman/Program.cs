@@ -10,11 +10,12 @@ namespace Pacman
     {
         static void Main(string[] args)
         {
+            Input.MoveDelay = 400;
+
             Generation.init_game();
             Generation.gen_game_level();
             Generation.refresh_game();
-            Console.SetCursorPosition(0, 0);
-           // Input.InputHandler();
+            Input.InputHandler();
         }
     }
 }

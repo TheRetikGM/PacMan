@@ -12,6 +12,7 @@ namespace Pacman
         public char Character;
         public ConsoleColor color;
         public int pos_x, pos_y;
+        public Directions last_move_dir = Directions.None;
 
         /* Constructor */
         public Pacman(int pos_y, int pos_x, char pacman_character, ConsoleColor color)
@@ -62,25 +63,53 @@ namespace Pacman
         {
             return (y > 0 && y < Globals.WIN_Y && x > 0 && x < Globals.WIN_X && Globals.Game_array[y, x] == Objects.Space) ? true : false;
         }
-        public void move_up()
+        public Directions Move(Directions dir)
         {
-            if (can_move_to(pos_y - 1, pos_x))
-                move_to(pos_y - 1, pos_x);
-        }
-        public void move_down()
-        {
-            if (can_move_to(pos_y + 1, pos_x))
-                move_to(pos_y + 1, pos_x);
-        }
-        public void move_left()
-        {
-            if (can_move_to(pos_y, pos_x - 1))
-                move_to(pos_y, pos_x - 1);
-        }
-        public void move_right()
-        {
-            if (can_move_to(pos_y, pos_x + 1))
-                move_to(pos_y, pos_x + 1);
+            if (dir == Directions.Up)
+            {
+                if (can_move_to(pos_y - 1, pos_x))
+                {
+                    move_to(pos_y - 1, pos_x);
+                    last_move_dir = Directions.Up;
+                    return last_move_dir;
+                }
+                else
+                    return Directions.None;
+            }
+            else if (dir == Directions.Down)
+            {
+                if (can_move_to(pos_y + 1, pos_x))
+                {
+                    move_to(pos_y + 1, pos_x);
+                    last_move_dir = Directions.Down;
+                    return last_move_dir;
+                }
+                else
+                    return Directions.None;
+            }
+            else if (dir == Directions.Left)
+            {
+                if (can_move_to(pos_y, pos_x - 2))
+                {
+                    move_to(pos_y, pos_x - 2);
+                    last_move_dir = Directions.Left;
+                    return last_move_dir;
+                }
+                else
+                    return Directions.None;
+            }
+            else if (dir == Directions.Right)
+            {
+                if (can_move_to(pos_y, pos_x + 2))
+                {
+                    move_to(pos_y, pos_x + 2);
+                    last_move_dir = Directions.Right;
+                    return last_move_dir;
+                }
+                else
+                    return Directions.None;
+            }
+            else return last_move_dir;
         }
     }
 }

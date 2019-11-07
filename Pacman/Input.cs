@@ -8,6 +8,9 @@ namespace Pacman
 {
     class Input
     {
+        private static Directions cur_dir;
+        public static int MoveDelay = 500;
+
         public static void Flush_input()
         {
             while (Console.KeyAvailable)
@@ -15,25 +18,38 @@ namespace Pacman
         }
         public static void InputHandler()
         {
-            ConsoleKeyInfo c;
-            while ((c = Console.ReadKey(true)).Key != ConsoleKey.X)
+            ConsoleKeyInfo c = Console.ReadKey(true);
+            while (c.Key != ConsoleKey.X)
             {
                 switch (c.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        Globals.Pac.move_up();
+                        cur_dir = Globals.Pac.Move(Directions.Up);
                         break;
                     case ConsoleKey.DownArrow:
-                        Globals.Pac.move_down();
+                        cur_dir = Globals.Pac.Move(Directions.Down);
                         break;
                     case ConsoleKey.LeftArrow:
-                        Globals.Pac.move_left();
+                        cur_dir = Globals.Pac.Move(Directions.Left);
                         break;
                     case ConsoleKey.RightArrow:
-                        Globals.Pac.move_right();
+                        cur_dir = Globals.Pac.Move(Directions.Right);
+                        break;
+                    default:
+                        cur_dir = Globals.Pac.Move(Globals.Pac.last_move_dir);
                         break;
                 }
+                if (cur_dir != Directions.None)
+                {
+                    System.Threading.Thread.Sleep(MoveDelay);
+                    if (Console.KeyAvailable)
+                        c = Console.ReadKey(true);
+                }
+                else
+                    c = Console.ReadKey(true);
                 Flush_input();
+                if (Globals.Pac.Character == 'C') Globals.Pac.Character = 'c';
+                else if (Globals.Pac.Character == 'c') Globals.Pac.Character = 'C';
             }
         }
     }

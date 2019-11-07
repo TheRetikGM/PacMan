@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Directions.cs" />
     <Compile Include="Generation.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Input.cs" />

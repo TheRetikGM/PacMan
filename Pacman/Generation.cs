@@ -76,39 +76,10 @@ namespace Pacman
                 }
             }
         }
-        public static void gen_rand_walls(char type, int amount)
-        {
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            int rand_x, rand_y, a, b;
-
-            if (type == 'v')
-                a = 3;
-            else if (type == 'h')
-                a = 6;
-            else return;
-
-            for (int i = 0; i < amount; i++)
-            {
-                rand_x = rnd.Next(1, Globals.WIN_X - 1);
-                rand_y = rnd.Next(1, Globals.WIN_Y - 1);
-
-                for (int j = 0; j < a; j++)
-                {
-                    if ((type == 'v') ? rand_y + j >= Globals.WIN_Y - 1 : rand_x + j >= Globals.WIN_X - 1)
-                        break;
-                    if (type == 'v')
-                        Globals.Game_array[rand_y + j, rand_x] = Objects.Vline;
-                    else
-                        Globals.Game_array[rand_y, rand_x + j] = Objects.Hline;
-                }
-            }
-        }
         public static void gen_game_level()
         {
             Random rnd = new Random(Guid.NewGuid().GetHashCode());
             gen_box();
-            gen_rand_walls('v', rnd.Next(8, 10));
-            gen_rand_walls('h', rnd.Next(8, 10));
         }
     }
 }
