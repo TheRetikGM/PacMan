@@ -65,7 +65,7 @@ namespace Pacman
             }
             return false;
         }
-        public void Move(Directions dir)
+        public Directions Move(Directions dir)
         {
             if (dir == Directions.Up)
             {
@@ -80,6 +80,9 @@ namespace Pacman
                     move_to(pos_y - 1, pos_x);
                     last_move_dir = Directions.Up;
                 }
+                else
+                    return last_move_dir;
+                return last_move_dir;
             }
             else if (dir == Directions.Down)
             {
@@ -94,6 +97,9 @@ namespace Pacman
                     move_to(pos_y + 1, pos_x);
                     last_move_dir = Directions.Down;
                 }
+                else
+                    return last_move_dir;
+                return last_move_dir;
             }
             else if (dir == Directions.Left)
             {
@@ -108,6 +114,9 @@ namespace Pacman
                     move_to(pos_y, pos_x - 2);
                     last_move_dir = Directions.Left;
                 }
+                else
+                    return last_move_dir;
+                return last_move_dir;
             }
             else if (dir == Directions.Right)
             {
@@ -122,7 +131,11 @@ namespace Pacman
                     move_to(pos_y, pos_x + 2);
                     last_move_dir = Directions.Right;
                 }
+                else
+                    return last_move_dir;
+                return last_move_dir;
             }
+            else return Directions.None;
         }
     }
 }

@@ -16,16 +16,6 @@ namespace Pacman
             Globals.Win_base_x = 1;
             Globals.Win_base_y = 1;
             Objects.Space = ' ';
-            Objects.Hline = '═';
-            Objects.Vline = '║';
-            Objects.URcorner = '╔';
-            Objects.ULcorner = '╗';
-            Objects.DLcorner = '╝';
-            Objects.DRcorner = '╚';
-            Objects.HUline = '╩';
-            Objects.HDline = '╦';
-            Objects.VLline = '╣';
-            Objects.VRline = '╠';
             Objects.TicTac = '•';
             Objects.ObjectsColor = ConsoleColor.Cyan;
 

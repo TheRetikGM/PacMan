@@ -10,6 +10,7 @@ namespace Pacman
     {
         private static Directions cur_dir;
         public static int MoveDelay = 500;
+        private static Directions wantedDir { get; set; }
 
         public static void Flush_input()
         {
@@ -18,27 +19,34 @@ namespace Pacman
         }
         public static void InputHandler()
         {
+            Directions wanted_dir = Directions.None;
             ConsoleKeyInfo c = Console.ReadKey(true);
             while (c.Key != ConsoleKey.X)
             {
                 switch (c.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        Globals.Pac.Move(Directions.Up);
+                        wanted_dir = Directions.Up;
+                        cur_dir = Globals.Pac.Move(Directions.Up);
                         break;
                     case ConsoleKey.DownArrow:
-                        Globals.Pac.Move(Directions.Down);
+                        wanted_dir = Directions.Down;
+                        cur_dir = Globals.Pac.Move(Directions.Down);
                         break;
                     case ConsoleKey.LeftArrow:
-                        Globals.Pac.Move(Directions.Left);
+                        wanted_dir = Directions.Left;
+                        cur_dir = Globals.Pac.Move(Directions.Left);
                         break;
                     case ConsoleKey.RightArrow:
-                        Globals.Pac.Move(Directions.Right);
+                        wanted_dir = Directions.Right;
+                        cur_dir = Globals.Pac.Move(Directions.Right);
                         break;
                     default:
-                        Globals.Pac.Move(Globals.Pac.last_move_dir);
+                        cur_dir = Globals.Pac.Move(Globals.Pac.last_move_dir);
                         break;
-                }              
+                }
+                if (wanted_dir != Globals.Pac.last_move_dir)
+                    Globals.Pac.Move(Globals.Pac.last_move_dir);
                 System.Threading.Thread.Sleep(MoveDelay);
 
                 if (Console.KeyAvailable)
