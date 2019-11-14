@@ -10,12 +10,16 @@ namespace Pacman
     {
         static void Main(string[] args)
         {
-            Input.MoveDelay = 400;
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Input.MoveDelay = 200;
 
             Generation.init_game();
             Generation.gen_game_level();
+            Globals.Pac.color = ConsoleColor.Yellow;  
             Generation.GenTicTacs();
+            Generation.SetColors();
             Generation.refresh_game();
+            Generation.MvColWrite(Globals.Win_base_y + Globals.WIN_MAX_Y, Globals.Win_base_x, ConsoleColor.Green, "Press 'x' to quit");
             Input.InputHandler();
         }
     }

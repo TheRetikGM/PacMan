@@ -24,32 +24,32 @@ namespace Pacman
                 switch (c.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        cur_dir = Globals.Pac.Move(Directions.Up);
+                        Globals.Pac.Move(Directions.Up);
                         break;
                     case ConsoleKey.DownArrow:
-                        cur_dir = Globals.Pac.Move(Directions.Down);
+                        Globals.Pac.Move(Directions.Down);
                         break;
                     case ConsoleKey.LeftArrow:
-                        cur_dir = Globals.Pac.Move(Directions.Left);
+                        Globals.Pac.Move(Directions.Left);
                         break;
                     case ConsoleKey.RightArrow:
-                        cur_dir = Globals.Pac.Move(Directions.Right);
+                        Globals.Pac.Move(Directions.Right);
                         break;
                     default:
-                        cur_dir = Globals.Pac.Move(Globals.Pac.last_move_dir);
+                        Globals.Pac.Move(Globals.Pac.last_move_dir);
                         break;
-                }
-                if (cur_dir != Directions.None)
-                {
-                    System.Threading.Thread.Sleep(MoveDelay);
-                    if (Console.KeyAvailable)
-                        c = Console.ReadKey(true);
-                }
-                else
+                }              
+                System.Threading.Thread.Sleep(MoveDelay);
+
+                if (Console.KeyAvailable)
                     c = Console.ReadKey(true);
+
                 Flush_input();
-                if (Globals.Pac.Character == 'C') Globals.Pac.Character = 'c';
-                else if (Globals.Pac.Character == 'c') Globals.Pac.Character = 'C';
+
+                if (Globals.Pac.Character == Char.ToLower(Globals.Pac.Character))
+                    Globals.Pac.Character = char.ToUpper(Globals.Pac.Character);
+                else if (Globals.Pac.Character == Char.ToUpper(Globals.Pac.Character))
+                    Globals.Pac.Character = char.ToLower(Globals.Pac.Character);
             }
         }
     }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3045D5B8-D01B-428A-9402-516532797D30}</ProjectGuid>
+    <ProjectGuid>{454C6145-10C8-4B7E-9765-66606F32E46F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Pacman</RootNamespace>
-    <AssemblyName>Pacman</AssemblyName>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -22,7 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,24 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enumerations\CharTypes.cs" />
-    <Compile Include="Structs\chtype.cs" />
-    <Compile Include="Enumerations\Directions.cs" />
-    <Compile Include="Generation\Generation.cs" />
-    <Compile Include="Globals.cs" />
-    <Compile Include="Input.cs" />
-    <Compile Include="Objects.cs" />
-    <Compile Include="Pacman.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Generation\legend_chartypes.txt" />
-    <Content Include="Generation\level.txt" />
-    <Content Include="Generation\legend.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

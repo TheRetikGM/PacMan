@@ -1,0 +1,31 @@
+16HHHHHHHHHHHHHHHHHHHHHHHH7--8HHHHHHHHHHHHHHHHHHHHHHHH62
+VV----------------------------------------------------VV
+VV--1HHHHHHHH2--1HHHHHHHHHHHHHHHHHHHHHH2--1HHHHHHHH2--VV
+VV--V##1HHHHH4--3HHHHHHHHH2##1HHHHHHHHH4--3HHHHH2##V--VV
+VV--V##V------------------V##V------------------V##V--VV
+VV--V##V--1HHHHHH2--1HH2--V##V--1HH2--1HHHHHH2--V##V--VV
+VV--V##V--V######V--V##V--V##V--V##V--V######V--V##V--VV
+VV--V##V--V######V--V##V--V##V--V##V--V######V--V##V--VV
+VV--V##V--V######V--V##V--V##V--V##V--V######V--V##V--VV
+VV--3HH4--3HHH2##V--V##V--V##V--V##V--V##1HHH4--3HH4--VV
+VV------------V##V--3HH4--3HH4--3HH4--V##V------------VV
+35HHHHHHHH62--V##V--------------------V##V--16HHHHHHHH54
+          VV--V##V--1HHHHH2--1HHHHH2--V##V--VV          
+HHHHHHHHHH54--3HH4--V1HHHH4--3HHHH2V--3HH4--35HHHHHHHHHH
+--------------------VV------------VV--------------------
+HHHHHHHHHH62--1HH2--V3HHHHHHHHHHHH4V--1HH2--16HHHHHHHHHH
+          VV--V##V--3HHHHHHHHHHHHHH4--V##V--VV          
+16HHHHHHHH54--V##V---------P----------V##V--35HHHHHHHH62
+VV------------V##3HHHHH2--1HH2--1HHHHH4##V------------VV
+VV--1HHHHHH2--V##1HHHHH4--V##V--3HHHHH2##V--1HHHHHH2--VV
+VV--V######V--V##V--------V##V--------V##V--V######V--VV
+VV--V######V--V##V--1HHHHH4##3HHHHH2--V##V--V######V--VV
+VV--V##1HHH4--3HH4--V##1HHHHHHHH2##V--3HH4--3HHH2##V--VV
+VV--V##V------------V##V--------V##V------------V##V--VV
+VV--V##V--1HHHHHH2--V##V--1HH2--V##V--1HHHHHH2--V##V--VV
+VV--3HH4--3HHHHHH4--3HH4--V##V--3HH4--3HHHHHH4--3HH4--VV
+VV------------------------V##V------------------------VV
+VV--1HH2--1HHHHHHHH2--1HHH4##3HHH2--1HHHHHHHH2--1HH2--VV
+VV--3HH4--V1HHHHHH2V--3HHHHHHHHHH4--V1HHHHHH2V--3HH4--VV
+VV--------VV      VV----------------VV      VV--------VV
+35HHHHHHHH55HHHHHH55HHHHHH7--8HHHHHH55HHHHHH55HHHHHHHH54

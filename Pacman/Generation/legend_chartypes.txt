@@ -1,0 +1,7 @@
+wall:0
+warp:3
+entity:5
+road:4
+food:1
+powerfood:2
+pacman:6
